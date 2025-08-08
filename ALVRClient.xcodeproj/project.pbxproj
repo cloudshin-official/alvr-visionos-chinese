@@ -542,17 +542,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ALVRClient/Preview Content\"";
-				DEVELOPMENT_TEAM = A2R992S5N3;
+				DEVELOPMENT_TEAM = DL6MSX2V76;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ALVR;
+				INFOPLIST_KEY_CFBundleDisplayName = "ALVR中文版";
 				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "For connecting to ALVR server on local network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used for in game voice chat";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "找你家电脑玩游戏啊 干嘛";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "你打游戏你总要问候对方爸爸妈妈吧";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +563,7 @@
 					"$(PROJECT_DIR)",
 				);
 				MARKETING_VERSION = 20.13.01;
-				PRODUCT_BUNDLE_IDENTIFIER = alvr.client;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caidingding233.alvr.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -585,17 +585,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ALVRClient/Preview Content\"";
-				DEVELOPMENT_TEAM = A2R992S5N3;
+				DEVELOPMENT_TEAM = DL6MSX2V76;
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ALVR;
+				INFOPLIST_KEY_CFBundleDisplayName = "ALVR中文版";
 				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "For connecting to ALVR server on local network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used for in game voice chat";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "找你家电脑玩游戏啊 干嘛";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "你打游戏你总要问候对方爸爸妈妈吧";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,7 +606,7 @@
 					"$(PROJECT_DIR)",
 				);
 				MARKETING_VERSION = 20.13.01;
-				PRODUCT_BUNDLE_IDENTIFIER = alvr.client;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caidingding233.alvr.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -624,7 +624,7 @@
 				CODE_SIGN_ENTITLEMENTS = ALVREyeBroadcast/ALVREyeBroadcast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A2R992S5N3;
+				DEVELOPMENT_TEAM = DL6MSX2V76;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ALVREyeBroadcast/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Send Eye Tracking To ALVR";
@@ -635,7 +635,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alvr.client.ALVREyeBroadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caidingding233.alvr.client.ALVREyeBroadcast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -652,7 +652,7 @@
 				CODE_SIGN_ENTITLEMENTS = ALVREyeBroadcast/ALVREyeBroadcast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A2R992S5N3;
+				DEVELOPMENT_TEAM = DL6MSX2V76;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ALVREyeBroadcast/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Send Eye Tracking To ALVR";
@@ -663,7 +663,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alvr.client.ALVREyeBroadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caidingding233.alvr.client.ALVREyeBroadcast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";

@@ -9,7 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 DEVELOPMENT_TEAM = 3D7RY439N
-PRODUCT_BUNDLE_IDENTIFIER = alvr.client
+PRODUCT_BUNDLE_IDENTIFIER = com.caidingding233.alvr.client
 
 #include? "Override.xcconfig"
 #include? "Testflight.xcconfig"

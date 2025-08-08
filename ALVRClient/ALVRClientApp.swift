@@ -48,8 +48,8 @@ struct AWDLAlertView: View {
 
     var body: some View {
         VStack {
-            Text("Network Instability Detected")
-            Text("(You should be seeing an alert box)")
+            Text("检测到网络不稳定")
+            Text("（您应该会看到一个提示框）")
             //Text("\nSignificant stuttering was detected within the last minute.\n\nMake sure your PC is directly connected to your router and that the headset is in the line of sight of the router.\n\nMake sure you have AirDrop and Handoff disabled in Settings > General > AirDrop/Handoff.\n\nAlternatively, ensure your router is set to Channel 149 (NA) or 44 (EU).")
         }
         .frame(minWidth: 650, maxWidth: 650, minHeight: 900, maxHeight: 900)
@@ -58,16 +58,16 @@ struct AWDLAlertView: View {
         }
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text("Network Instability Detected"),
-                message: Text("Significant stuttering was detected within the last minute.\n\nMake sure your PC is directly connected to your router and that the headset is in the line of sight of the router.\n\nMake sure you have AirDrop and Handoff disabled in Settings > General > AirDrop/Handoff.\n\nAlternatively, ensure your router is set to Channel 149 (NA) or 44 (EU)."),
+                title: Text("检测到网络不稳定"),
+                message: Text("过去一分钟内检测到严重卡顿。\n\n请确保您的电脑直接连接到路由器，并且头显在路由器的视线范围内。\n\n请确保在设置 > 通用 > AirDrop/接力中禁用了 AirDrop 和接力功能。\n\n或者，确保您的路由器设置为频道 149（北美）或 44（欧洲）。"),
                 primaryButton: .default(
-                    Text("OK"),
+                    Text("确定"),
                     action: {
                         dismissWindow(id: "AWDLAlert")
                     }
                 ),
                 secondaryButton: .destructive(
-                    Text("Don't Show Again"),
+                    Text("不再显示"),
                     action: {
                         ALVRClientApp.gStore.settings.dontShowAWDLAlertAgain = true
                         saveAction()
@@ -96,31 +96,31 @@ struct ALVRClientApp: App {
     
     let testChangelog = false
     let changelogText = """
-    See the Help and Information tab for wiki links on setting up your PC and network for ALVR.\n\
+    请参阅帮助和信息选项卡获取有关为 ALVR 设置电脑和网络的 wiki 链接。\n\
     \n\
     ________________________________\n\
     \n\
-    What's changed?\n\
+    更新内容：\n\
     \n\
-    • (Testflight only) Added support for PSVR2 controllers on visionOS 26 developer beta.\n\
-    • (Testflight only) Added support for high-resolution rendering in Metal (default) backend.\n\
-    \n\
-    ________________________________\n\
-    \n\
-    Bug fixes:\n\
-    \n\
-    • (Testflight only) Added a hackfix fallback if HEVC fails to initialize, fixes HEVC support on Release builds.\n\
-    • (Testflight only) Toned down the haptics on PSVR2 controllers to avoid tracking precision loss and general discomfort\n\
-      (this apparently isn't accurate to the PCVR box, which was also extremely strong).\n\
+    • (仅 Testflight) 在 visionOS 26 开发者测试版上添加了对 PSVR2 控制器的支持。\n\
+    • (仅 Testflight) 在 Metal（默认）后端添加了高分辨率渲染支持。\n\
     \n\
     ________________________________\n\
     \n\
-    Known issues:\n\
+    错误修复：\n\
     \n\
-    • Hands may still show despite the hand visibility being set to off. This is a longstanding visionOS bug. Open and close the Control Center to fix.\n\
-    • Controllers may be unstable on streamer versions older than v20.11.0. Please update your streamer to resolve this issue.\n\
-    • (Testflight only) Right system button on PSVR2 controllers doesn't work in SteamVR.\n\
-    • (Testflight only) PSVR2 controllers are currently missing support for button touches (might be an Apple bug).\n\
+    • (仅 Testflight) 如果 HEVC 初始化失败，添加了一个临时修复，修复了发布版本中的 HEVC 支持。\n\
+    • (仅 Testflight) 降低了 PSVR2 控制器的触觉反馈强度，以避免跟踪精度损失和一般不适\n\
+      （这显然与 PCVR 盒子不准确，后者的强度也非常高）。\n\
+    \n\
+    ________________________________\n\
+    \n\
+    已知问题：\n\
+    \n\
+    • 尽管手部可见性设置为关闭，手部仍可能显示。这是一个长期存在的 visionOS 错误。打开和关闭控制中心可以修复。\n\
+    • 在 v20.11.0 之前的流媒体版本上，控制器可能不稳定。请更新您的流媒体服务器以解决此问题。\n\
+    • (仅 Testflight) PSVR2 控制器的右系统按钮在 SteamVR 中不起作用。\n\
+    • (仅 Testflight) PSVR2 控制器目前缺少按钮触摸支持（可能是 Apple 的错误）。\n\
     
     """
     
@@ -180,13 +180,12 @@ struct ALVRClientApp: App {
             .environment(model)
             .environmentObject(EventHandler.shared)
             .environmentObject(ALVRClientApp.gStore)
-            .fixedSize()
             .alert(isPresented: $showChangelog) {
                 Alert(
                     title: Text("ALVR v" + ALVRClientApp.gStore.settings.lastUsedAppVersion),
                     message: Text(changelogText),
                     dismissButton: .default(
-                        Text("Dismiss"),
+                        Text("关闭"),
                         action: {
                             
                         }

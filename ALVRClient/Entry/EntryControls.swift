@@ -22,29 +22,46 @@ struct EntryControls: View {
     var body: some View {
         @Bindable var model = model
         
-        HStack(spacing: 17) {
-            if eventHandler.connectionState == .connected {
-                Toggle(isOn: $model.isShowingClient) {
-                    Label("Enter", systemImage: "visionpro")
-                        .labelStyle(.titleAndIcon)
-                        .padding(15)
+        VStack(spacing: 20) {
+            // 主控制按钮 - 使用visionOS风格
+            Button(action: {
+                if eventHandler.connectionState == .connected {
+                    model.isShowingClient.toggle()
                 }
-            } else {
-                Label("Connecting...", systemImage: "visionpro")
-                    .labelStyle(.titleOnly)
-                    .padding(15)
+            }) {
+                VStack(spacing: 12) {
+                    Image(systemName: getButtonIcon())
+                        .font(.system(size: 50))
+                        .fontWeight(.medium)
+                    
+                    Text(getButtonText())
+                        .font(.title3)
+                        .fontWeight(.medium)
+                }
+                .frame(width: 200, height: 200)
+                .foregroundColor(getButtonColor())
             }
+            .buttonStyle(.bordered)
+            .controlSize(.extraLarge)
+            .disabled(eventHandler.connectionState != .connected)
+            .opacity(eventHandler.connectionState == .connected ? 1.0 : 0.6)
             
+            // 状态指示器
+            if eventHandler.connectionState != .connected {
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text("等待连接...")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
         }
-        .toggleStyle(.button)
-        .buttonStyle(.borderless)
-        .glassBackgroundEffect(in: .rect(cornerRadius: 50))
-
+        
         //Enable Client
         .onChange(of: model.isShowingClient) { _, isShowing in
             Task {
                 if isShowing {
-
                     saveAction()
                     print("Opening Immersive Space")
                     if gStore.settings.experimental40ppd {
@@ -97,6 +114,35 @@ struct EntryControls: View {
                 }
             }
         }
-
+    }
+    
+    private func getButtonIcon() -> String {
+        if eventHandler.connectionState != .connected {
+            return "wifi.slash"
+        } else if model.isShowingClient {
+            return "stop.fill"
+        } else {
+            return "play.fill"
+        }
+    }
+    
+    private func getButtonText() -> String {
+        if eventHandler.connectionState != .connected {
+            return "未连接"
+        } else if model.isShowingClient {
+            return "停止串流"
+        } else {
+            return "开始串流"
+        }
+    }
+    
+    private func getButtonColor() -> Color {
+        if eventHandler.connectionState != .connected {
+            return .gray
+        } else if model.isShowingClient {
+            return .red
+        } else {
+            return .blue
+        }
     }
 }

@@ -26,6 +26,8 @@ struct GlobalSettings: Codable {
     var forceMipmapEyeTracking = false
     var targetHandsAtRoundtripLatency = false
     var lastUsedAppVersion = "never launched"
+    var savedIPAddresses: [String] = []
+    var currentSelectedIP: String = ""
     
     init() {}
     
@@ -50,6 +52,8 @@ struct GlobalSettings: Codable {
         self.forceMipmapEyeTracking = try container.decodeIfPresent(Bool.self, forKey: .forceMipmapEyeTracking) ?? self.forceMipmapEyeTracking
         self.targetHandsAtRoundtripLatency = try container.decodeIfPresent(Bool.self, forKey: .targetHandsAtRoundtripLatency) ?? self.targetHandsAtRoundtripLatency
         self.lastUsedAppVersion = try container.decodeIfPresent(String.self, forKey: .lastUsedAppVersion) ?? self.lastUsedAppVersion
+        self.savedIPAddresses = try container.decodeIfPresent([String].self, forKey: .savedIPAddresses) ?? self.savedIPAddresses
+        self.currentSelectedIP = try container.decodeIfPresent(String.self, forKey: .currentSelectedIP) ?? self.currentSelectedIP
     }
 }
 

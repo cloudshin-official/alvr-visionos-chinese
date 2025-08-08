@@ -795,7 +795,7 @@ class EventHandler: ObservableObject {
         }
         
         if flavorText == "The stream will begin soon\nPlease wait...\n" {
-            flavorText = "The stream is ready."
+            flavorText = "串流已就绪"
         }
         
         DispatchQueue.main.async {
